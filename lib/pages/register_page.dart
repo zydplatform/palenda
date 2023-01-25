@@ -5,15 +5,22 @@ import 'package:palenda/classes/language_constants.dart';
 
 class RegisterPage extends StatelessWidget{
    RegisterPage({super.key});
+  final firstnameController = TextEditingController();
+  final lastnameController = TextEditingController();
   final usernameController = TextEditingController();
+  final emailController = TextEditingController();
+  final tinController = TextEditingController();
+  final phoneController = TextEditingController();
   final passwordController = TextEditingController();
+
+
   @override 
   Widget build(BuildContext context){
     return 
-    SingleChildScrollView()
+    
     Scaffold(
       backgroundColor: Colors.grey[400],
-      body: SafeArea(
+      body: SingleChildScrollView( child:SafeArea(
         child: Center(child: 
         Column(
           children:  [
@@ -28,15 +35,15 @@ class RegisterPage extends StatelessWidget{
             ),
             const SizedBox(height: 25,),
             UserTextField(
-              controller: usernameController,
+              controller: firstnameController,
               hinText: 'Enter your firstname', 
               obscureText: false,
               ),
 
             const SizedBox(height: 25,),
             UserTextField(
-              controller: usernameController,
-              hinText: 'Enter your username', 
+              controller: lastnameController,
+              hinText: 'Enter your lastname', 
               obscureText: false,
               ),
 
@@ -49,29 +56,22 @@ class RegisterPage extends StatelessWidget{
 
                const SizedBox(height: 25,),
             UserTextField(
-              controller: usernameController,
-              hinText: 'Enter your username', 
+              controller: emailController,
+              hinText: 'Enter your email', 
               obscureText: false,
               ),
 
                const SizedBox(height: 25,),
             UserTextField(
-              controller: usernameController,
-              hinText: 'Enter your username', 
+              controller: tinController,
+              hinText: 'Enter your Tin', 
               obscureText: false,
               ),
 
                const SizedBox(height: 25,),
             UserTextField(
-              controller: usernameController,
-              hinText: 'Enter your username', 
-              obscureText: false,
-              ),
-
-               const SizedBox(height: 25,),
-            UserTextField(
-              controller: usernameController,
-              hinText: 'Enter your username', 
+              controller: phoneController,
+              hinText: 'Enter your Phone Number', 
               obscureText: false,
               ),
 
@@ -90,7 +90,11 @@ class RegisterPage extends StatelessWidget{
             ],
             ),),
             const SizedBox(height: 25,),
-            UserButton(onTap: signUserIn),
+            UserButton(onTap: ()=>{
+            Navigator.push(context, MaterialPageRoute(
+                builder: (context) => RegisterPage())
+            )
+            }),
             const SizedBox(height: 25,),
             Padding(padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child:
@@ -106,10 +110,9 @@ class RegisterPage extends StatelessWidget{
       ],
       ),
       ),
-      ),
+      ),)
     );
   }
 
-  void signUserIn() {
-  }
+  
 }
