@@ -1,0 +1,18 @@
+{
+    "homePage": "Wo'tandikira",
+    "personalInformation": "Ebikukwatako",
+    "name": "Erinnya",
+    "nameHint": "Yingiza Erinnya Lyo",
+    "welcome": "Tukwaniriza!",
+    "lender": "Wola Ensimbi",
+    "borrower": "Wewole",
+    "email": "Email Akawunti",
+    "emailHint": "Yingiza Email Akawunti",   
+    "dateOfBirth": "Wazaalibwa ddi",
+    "requiredField": "kyetaagisa",
+    "submitInfo": "Sindika obubaka",
+    "aboutUs": "Ebitukwatako",
+    "settings": "ensengeka",
+    "changeLanguage": "Kyusa Olulimi",
+    "about": "Ebitukwatako"
+}
