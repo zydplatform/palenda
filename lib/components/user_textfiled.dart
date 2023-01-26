@@ -26,7 +26,7 @@ class UserTextField extends StatelessWidget{
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.grey.shade400),
                 ),
-                fillColor: Colors.grey.shade200,
+                fillColor: Colors.grey.shade300,
                 filled: true,
                 hintText: hinText,
                 hintStyle: TextStyle(color: Colors.grey[500]),

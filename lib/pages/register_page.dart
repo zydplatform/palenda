@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:palenda/components/user_button.dart';
+import 'package:palenda/components/loginuser_button.dart';
 import 'package:palenda/components/user_textfiled.dart';
 import 'package:palenda/classes/language_constants.dart';
+import 'package:palenda/pages/login_page.dart';
+
+import '../components/signup_button.dart';
 
 class RegisterPage extends StatelessWidget{
    RegisterPage({super.key});
@@ -19,7 +22,7 @@ class RegisterPage extends StatelessWidget{
     return 
     
     Scaffold(
-      backgroundColor: Colors.grey[400],
+      backgroundColor: Colors.grey[350],
       body: SingleChildScrollView( child:SafeArea(
         child: Center(child: 
         Column(
@@ -90,7 +93,7 @@ class RegisterPage extends StatelessWidget{
             ],
             ),),
             const SizedBox(height: 25,),
-            UserButton(onTap: ()=>{
+            User1Button(onTap: ()=>{
             Navigator.push(context, MaterialPageRoute(
                 builder: (context) => RegisterPage())
             )
@@ -100,9 +103,22 @@ class RegisterPage extends StatelessWidget{
             child:
             Row(mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            Text('Not A Member ?', style: TextStyle(color: Colors.grey[600]),),
+            Text('Already a Member ?', style: TextStyle(color: Colors.grey[600]),),
             const SizedBox(width: 5,),
-            const Text('Register', style: TextStyle(color: Colors.blue),),
+
+             GestureDetector(
+                                    onTap: () =>{
+                                  // Navigator.pop(context)
+                                   Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) => LoginPage()
+                                  ))
+
+
+                                    },
+                                    child:  const Text('Login', style: TextStyle(color: Colors.blue),),
+            )
+                          
+           
             
             ],
             ),),
