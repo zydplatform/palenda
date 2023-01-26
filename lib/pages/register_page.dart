@@ -4,6 +4,7 @@ import 'package:palenda/components/user_textfiled.dart';
 import 'package:palenda/classes/language_constants.dart';
 import 'package:palenda/pages/login_page.dart';
 
+import '../components/appbar.dart';
 import '../components/signup_button.dart';
 
 class RegisterPage extends StatelessWidget{
@@ -22,6 +23,12 @@ class RegisterPage extends StatelessWidget{
     return 
     
     Scaffold(
+
+      appBar: MyAppBar(
+              height: 50,
+                color: Colors.green, child: Text(''),
+
+         ),
       backgroundColor: Colors.grey[350],
       body: SingleChildScrollView( child:SafeArea(
         child: Center(child: 
@@ -31,47 +38,47 @@ class RegisterPage extends StatelessWidget{
             const Icon(Icons.people_alt_rounded,
              size: 100,),
              const SizedBox(height: 50,),
-            Text('Create Account',
+            Text(translation(context).register,
             style: TextStyle(
               color: Colors.grey.shade900,
             ),
             ),
-            const SizedBox(height: 25,),
+            const SizedBox(height: 10,),
             UserTextField(
               controller: firstnameController,
               hinText: 'Enter your firstname', 
               obscureText: false,
               ),
 
-            const SizedBox(height: 25,),
+            const SizedBox(height: 10,),
             UserTextField(
               controller: lastnameController,
               hinText: 'Enter your lastname', 
               obscureText: false,
               ),
 
-               const SizedBox(height: 25,),
+               const SizedBox(height: 10,),
             UserTextField(
               controller: usernameController,
               hinText: 'Enter your username', 
               obscureText: false,
               ),
 
-               const SizedBox(height: 25,),
+               const SizedBox(height: 10,),
             UserTextField(
               controller: emailController,
               hinText: 'Enter your email', 
               obscureText: false,
               ),
 
-               const SizedBox(height: 25,),
+               const SizedBox(height: 10,),
             UserTextField(
               controller: tinController,
               hinText: 'Enter your Tin', 
               obscureText: false,
               ),
 
-               const SizedBox(height: 25,),
+               const SizedBox(height: 10,),
             UserTextField(
               controller: phoneController,
               hinText: 'Enter your Phone Number', 
@@ -84,14 +91,6 @@ class RegisterPage extends StatelessWidget{
               hinText: 'Enter your password ',
               obscureText: true,
             ),
-            const SizedBox(height: 10,),
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child:
-            Row(mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-            Text('Forgot Password', style: TextStyle(color: Colors.grey[600]),),
-            ],
-            ),),
             const SizedBox(height: 25,),
             User1Button(onTap: ()=>{
             Navigator.push(context, MaterialPageRoute(
